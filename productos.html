@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Productos | Mi mascota</title>
+  <meta name="description" content="Cepillo con botón retráctil, guante quita pelos, correas, porta bolsas, palita, alicate, comederos y mochila transportadora. Precios, detalles y preguntas frecuentes.">
+  <meta name="theme-color" content="#faf9ef">
+  <link rel="icon" type="image/png" href="img/logo-circular.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/carrito.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-huella" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 12.2c-2.6 0-5.7 3.3-5.7 5.9 0 1.6 1.2 2.5 2.7 2.5 1.2 0 1.9-.6 3-.6s1.8.6 3 .6c1.5 0 2.7-.9 2.7-2.5 0-2.6-3.1-5.9-5.7-5.9Z"/><ellipse cx="4.6" cy="10.6" rx="2" ry="2.6" transform="rotate(-22 4.6 10.6)"/><ellipse cx="9" cy="6" rx="2.1" ry="2.8" transform="rotate(-8 9 6)"/><ellipse cx="15" cy="6" rx="2.1" ry="2.8" transform="rotate(8 15 6)"/><ellipse cx="19.4" cy="10.6" rx="2" ry="2.6" transform="rotate(22 19.4 10.6)"/></g></symbol>
+    <symbol id="i-bolsa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></g></symbol>
+    <symbol id="i-tienda" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></g></symbol>
+    <symbol id="i-mensaje" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></g></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></g></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></g></symbol>
+    <symbol id="i-tarjeta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></g></symbol>
+    <symbol id="i-banco" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="m12 2 8 5H4Z"/></g></symbol>
+    <symbol id="i-billete" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></g></symbol>
+  </svg>
+
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <p class="barra-aviso">Pedí por la web y coordinamos el envío por WhatsApp. También estamos en Mercado Libre.</p>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html">
+        <img src="img/logo-menu.png" width="260" height="174" alt="Mi mascota">
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" aria-current="page">Productos</a></li>
+          <li><a href="combos.html">Combos</a></li>
+          <li>
+            <a href="formulariodecompra.html">
+              <svg class="icono" aria-hidden="true"><use href="#i-bolsa"/></svg>
+              Comprar
+              <span class="contador" data-contador hidden aria-hidden="true">0</span>
+              <span class="sr-only" data-contador-texto></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="contenedor">
+      <header class="cabecera-pagina">
+        <h1>Productos</h1>
+        <p class="intro">Todo lo que usás para el cepillado, el paseo, la higiene y la comida de tu mascota. Elegí lo que necesitás y agregalo al carrito.</p>
+        <nav aria-label="Categorías de productos">
+          <ul class="chips">
+            <li><a href="#cepillado">Cepillado</a></li>
+            <li><a href="#paseo">Paseo</a></li>
+            <li><a href="#higiene">Higiene y limpieza</a></li>
+            <li><a href="#comederos">Comederos</a></li>
+            <li><a href="#viaje">Viaje</a></li>
+            <li><a href="#pagos">Modos de pago</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Cepillado -->
+      <section class="categoria" id="cepillado" aria-labelledby="titulo-cepillado">
+        <h2 id="titulo-cepillado"><svg class="icono" aria-hidden="true"><use href="#i-huella"/></svg>Cepillado</h2>
+
+        <article class="producto" id="cepillo" data-item aria-labelledby="t-cepillo">
+          <div class="producto__foto">
+            <img src="img/cepillo-retractil.jpg" width="720" height="900" alt="Cepillo azul con cerdas finas y botón retráctil">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-cepillo">Cepillo con botón retráctil</h3>
+            <p class="precio" data-precio="cepillo">$ 8.400</p>
+            <p>Cepillo de cerdas finas que desenreda y saca el pelo muerto. Cuando terminás, apretás el botón, las cerdas se esconden y el pelo sale todo junto, sin tener que sacarlo con los dedos.</p>
+            <ul class="lista-puntos">
+              <li>Cerdas finas con la punta redondeada</li>
+              <li>Mango de goma que no se resbala</li>
+              <li>Agujero en el mango para colgarlo</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="cepillo">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el cepillo</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Para qué tipo de pelo sirve?</dt>
+                <dd>Para pelo corto, mediano y largo. En pelo largo, cepillá por partes y empezá por las puntas para no dar tirones.</dd>
+                <dt>¿Cada cuánto conviene cepillar?</dt>
+                <dd>En época de muda, todos los días. El resto del año, dos o tres veces por semana alcanza.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="producto" id="guante-quitapelos" data-item aria-labelledby="t-guante-quitapelos">
+          <div class="producto__foto">
+            <img src="img/guante-quitapelos.jpg" width="720" height="900" loading="lazy" alt="Guante quita pelos azul de cinco dedos con puntas de goma">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-guante-quitapelos">Guante quita pelos</h3>
+            <p class="precio" data-precio="guante-quitapelos">$ 2.800</p>
+            <p>Guante de cinco dedos con puntas de goma: lo pasás como si acariciaras a tu mascota y el pelo suelto queda en el guante, no en la ropa ni en el sillón.</p>
+            <ul class="lista-puntos">
+              <li>Se usa como una caricia, ideal para mascotas que no se dejan cepillar</li>
+              <li>Junta el pelo suelto en la palma</li>
+              <li>Abrojo en la muñeca para ajustarlo</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="guante-quitapelos">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el guante quita pelos</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Sirve para gatos?</dt>
+                <dd>Sí. A muchos gatos les resulta más agradable que un cepillo.</dd>
+                <dt>¿Cómo se limpia?</dt>
+                <dd>Sacá el pelo acumulado con la mano y enjuagalo con agua.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- Paseo -->
+      <section class="categoria" id="paseo" aria-labelledby="titulo-paseo">
+        <h2 id="titulo-paseo"><svg class="icono" aria-hidden="true"><use href="#i-huella"/></svg>Paseo</h2>
+
+        <article class="producto" id="correa" data-item aria-labelledby="t-correa">
+          <div class="producto__foto">
+            <img src="img/correa-porta-bolsas.jpg" width="720" height="900" loading="lazy" alt="Correas en varios colores y estampados, cada una con su porta bolsas">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-correa">Correa con porta bolsas</h3>
+            <p class="precio" data-precio="correa">$ 8.000</p>
+            <p>Correa con un porta bolsas enganchado, para salir a pasear con todo a mano. Hay varios colores y estampados.</p>
+            <ul class="lista-puntos">
+              <li>Mosquetón de metal para el collar o el arnés</li>
+              <li>Porta bolsas incluido</li>
+              <li>Varios colores y estampados</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="correa">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre la correa</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Puedo elegir el color?</dt>
+                <dd>Sí. Contanos cuál preferís en los comentarios del pedido y te confirmamos por WhatsApp según lo que haya.</dd>
+                <dt>¿Cuál le queda bien a mi perro?</dt>
+                <dd>Con el peso y la contextura de tu perro ya podés elegir. Si te queda alguna duda, escribinos antes de comprar y te ayudamos.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="producto" id="porta-linterna" data-item aria-labelledby="t-porta-linterna">
+          <div class="producto__foto">
+            <img src="img/porta-bolsas-linterna.jpg" width="720" height="900" loading="lazy" alt="Porta bolsas gris con linterna en la base y rollo de bolsitas rosa">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-porta-linterna">Porta bolsas con linterna</h3>
+            <p class="precio" data-precio="porta-linterna">$ 4.750</p>
+            <p>Dispenser de bolsitas con una linterna en la base, para los paseos de noche o bien temprano. Lo enganchás a la correa y siempre tenés bolsitas y luz a mano.</p>
+            <ul class="lista-puntos">
+              <li>Linterna con botón de encendido</li>
+              <li>Ventana para sacar las bolsitas de a una</li>
+              <li>Mosquetón para colgarlo de la correa</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="porta-linterna">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el porta bolsas con linterna</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Qué bolsitas le entran?</dt>
+                <dd>Los rollos de bolsitas para mascotas de tamaño estándar, los que se consiguen en cualquier veterinaria.</dd>
+                <dt>¿Viene en kit?</dt>
+                <dd>Sí, junto con el alicate para uñas en el <a href="combos.html#kit-paseo-unas">Kit Paseo y Uñas</a>.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="producto" id="porta-bolsas" data-item aria-labelledby="t-porta-bolsas">
+          <div class="producto__foto">
+            <img src="img/porta-bolsas-verde.jpg" width="720" height="900" loading="lazy" alt="Porta bolsas verde oscuro con cordón negro y rollo de bolsitas adentro">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-porta-bolsas">Porta bolsas verde</h3>
+            <p class="precio" data-precio="porta-bolsas">$ 7.400</p>
+            <p>Porta bolsas compacto, de terminación suave al tacto, con cordón para colgarlo de la correa, la mochila o las llaves. Ocupa poco y combina con todo.</p>
+            <ul class="lista-puntos">
+              <li>Tamaño bolsillo</li>
+              <li>Cordón para colgar</li>
+              <li>Ventana para sacar las bolsitas de a una</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="porta-bolsas">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el porta bolsas verde</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿En qué se diferencia del que tiene linterna?</dt>
+                <dd>Este es más chico y liviano. El <a href="#porta-linterna">de linterna</a> suma luz para los paseos de noche.</dd>
+                <dt>¿Qué bolsitas le entran?</dt>
+                <dd>Los rollos de bolsitas para mascotas de tamaño estándar.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- Higiene y limpieza -->
+      <section class="categoria" id="higiene" aria-labelledby="titulo-higiene">
+        <h2 id="titulo-higiene"><svg class="icono" aria-hidden="true"><use href="#i-huella"/></svg>Higiene y limpieza</h2>
+
+        <article class="producto" id="palita" data-item aria-labelledby="t-palita">
+          <div class="producto__foto">
+            <img src="img/palita.jpg" width="720" height="900" loading="lazy" alt="Palita para excremento turquesa, cerrada, con cordón para colgar">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-palita">Palita para excremento</h3>
+            <p class="precio" data-precio="palita">$ 25.340</p>
+            <p>Recogedor con pinzas para juntar lo que deja tu perro sin agacharte y sin tocar nada. Tiene cordón para llevarla colgada durante el paseo.</p>
+            <ul class="lista-puntos">
+              <li>Juntás sin agacharte y sin ensuciarte las manos</li>
+              <li>Cordón para llevarla colgada</li>
+              <li>Se desarma para lavarla</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="palita">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre la palita</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Cómo se limpia?</dt>
+                <dd>Se desarma en dos partes: el vaso y las pinzas. Enjuagalas con agua y detergente.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="producto" id="alicate" data-item aria-labelledby="t-alicate">
+          <div class="producto__foto">
+            <img src="img/alicate-unas.jpg" width="720" height="900" loading="lazy" alt="Alicate para uñas con hoja de acero y mango de goma rojo y negro">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-alicate">Alicate para uñas</h3>
+            <p class="precio" data-precio="alicate">$ 4.100</p>
+            <p>El alicate de siempre: hoja de acero inoxidable, mango de goma que no se resbala y resorte para cortar con poco esfuerzo.</p>
+            <ul class="lista-puntos">
+              <li>Hoja de acero inoxidable</li>
+              <li>Mango antideslizante</li>
+              <li>Traba para guardarlo cerrado</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="alicate">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el alicate</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Cada cuánto hay que cortar las uñas?</dt>
+                <dd>Cuando las escuchás hacer ruido contra el piso al caminar, ya es momento.</dd>
+                <dt>¿Sirve para gatos?</dt>
+                <dd>Sí, para perros y gatos. En gatos, cortá solo la puntita.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- Comederos -->
+      <section class="categoria" id="comederos" aria-labelledby="titulo-comederos">
+        <h2 id="titulo-comederos"><svg class="icono" aria-hidden="true"><use href="#i-huella"/></svg>Comederos</h2>
+
+        <article class="producto" id="comedero-grande" data-item aria-labelledby="t-comedero-grande">
+          <div class="producto__foto">
+            <img src="img/comedero-grande.jpg" width="720" height="900" loading="lazy" alt="Comedero grande de acero inoxidable con base negra">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-comedero-grande">Comedero grande</h3>
+            <p class="precio" data-precio="comedero-grande">$ 5.990</p>
+            <p>Plato de acero inoxidable con base negra, en tamaño grande. Sirve para la comida o el agua y se lava como cualquier plato.</p>
+            <ul class="lista-puntos">
+              <li>Acero inoxidable, no guarda olor</li>
+              <li>Base negra en todo el borde</li>
+              <li>Fácil de lavar</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="comedero-grande">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el comedero grande</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Grande o chico?</dt>
+                <dd>Depende del tamaño de tu mascota y de cuánto come. Si tenés dudas, escribinos. Los dos juntos vienen en el <a href="combos.html#kit-comederos">Kit Comederos</a>.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+
+        <article class="producto" id="comedero-chico" data-item aria-labelledby="t-comedero-chico">
+          <div class="producto__foto">
+            <img src="img/comedero-chico.jpg" width="720" height="900" loading="lazy" alt="Comedero chico de acero inoxidable con base negra">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-comedero-chico">Comedero chico</h3>
+            <p class="precio" data-precio="comedero-chico">$ 4.750</p>
+            <p>El mismo plato de acero inoxidable con base negra, en tamaño chico. Ideal para el agua o para mascotas que comen poquito.</p>
+            <ul class="lista-puntos">
+              <li>Acero inoxidable, no guarda olor</li>
+              <li>Base negra en todo el borde</li>
+              <li>Fácil de lavar</li>
+            </ul>
+            <div class="producto__compra">
+              <button class="boton boton--primario" type="button" data-agregar="comedero-chico">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre el comedero chico</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Grande o chico?</dt>
+                <dd>Depende del tamaño de tu mascota y de cuánto come. Si tenés dudas, escribinos. Los dos juntos vienen en el <a href="combos.html#kit-comederos">Kit Comederos</a>.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- Viaje -->
+      <section class="categoria" id="viaje" aria-labelledby="titulo-viaje">
+        <h2 id="titulo-viaje"><svg class="icono" aria-hidden="true"><use href="#i-huella"/></svg>Viaje</h2>
+
+        <article class="producto" id="mochila" data-item aria-labelledby="t-mochila">
+          <div class="producto__foto">
+            <img src="img/mochila-rosa.jpg" width="720" height="900" loading="lazy" data-foto alt="Mochila transportadora con visor transparente tipo burbuja, vista de frente y de espalda">
+          </div>
+          <div class="producto__info">
+            <h3 id="t-mochila">Mochila transportadora con visor</h3>
+            <p class="precio" data-precio="mochila">$ 54.000</p>
+            <p>Mochila para llevar a tu gato o perro chico con un visor transparente tipo burbuja, para que vea todo el paseo. Tiene orificios de ventilación y tiras acolchadas para tu espalda.</p>
+            <ul class="lista-puntos">
+              <li>Visor transparente con orificios de ventilación</li>
+              <li>Tiras regulables y manija para llevarla en la mano</li>
+              <li>En rosa o negro</li>
+            </ul>
+            <div class="producto__compra">
+              <div class="campo-variante">
+                <label for="v-mochila">Color</label>
+                <select id="v-mochila" data-variante="mochila">
+                  <option>Rosa</option>
+                  <option>Negra</option>
+                </select>
+              </div>
+              <button class="boton boton--primario" type="button" data-agregar="mochila">Agregar al carrito</button>
+            </div>
+            <details class="faq">
+              <summary>Preguntas frecuentes<span class="sr-only"> sobre la mochila</span><svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+              <dl>
+                <dt>¿Le va a quedar cómoda a mi mascota?</dt>
+                <dd>Escribinos por WhatsApp con el peso y el largo de tu mascota y te confirmamos si le queda cómoda antes de que compres.</dd>
+                <dt>¿Cómo la acostumbro?</dt>
+                <dd>Dejala abierta en casa unos días con una manta suya adentro, así la conoce antes del primer viaje.</dd>
+              </dl>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <!-- Modos de pago -->
+      <section class="seccion" id="pagos" aria-labelledby="titulo-pagos">
+        <h2 id="titulo-pagos">Modos de pago</h2>
+        <p class="intro">Elegís cómo pagar al completar tu pedido. Cuando nos llega por WhatsApp, te confirmamos el stock y el costo del envío, y recién ahí pagás.</p>
+        <ul class="pagos">
+          <li>
+            <svg class="icono" aria-hidden="true"><use href="#i-tarjeta"/></svg>
+            <h3>Mercado Pago</h3>
+            <p>Tarjeta de crédito, débito o dinero en cuenta. Te mandamos el link de pago por WhatsApp.</p>
+          </li>
+          <li>
+            <svg class="icono" aria-hidden="true"><use href="#i-banco"/></svg>
+            <h3>Transferencia bancaria</h3>
+            <p>Te pasamos los datos de la cuenta cuando confirmamos tu pedido.</p>
+          </li>
+          <li>
+            <svg class="icono" aria-hidden="true"><use href="#i-billete"/></svg>
+            <h3>Efectivo</h3>
+            <p>Pagás al recibir o al retirar tu pedido, según lo que coordinemos.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Preguntas generales -->
+      <section class="faq-general" aria-labelledby="titulo-faq">
+        <h2 id="titulo-faq">Preguntas frecuentes</h2>
+        <details class="faq">
+          <summary>¿Cómo compro?<svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Agregá los productos al carrito, completá tus datos en <a href="formulariodecompra.html">Comprar</a> y enviá el pedido por WhatsApp. Te respondemos para confirmar el stock, el envío y el pago.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Hacen envíos?<svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Sí. El costo depende de tu zona y te lo pasamos junto con la confirmación del pedido.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Qué talle le compro a mi mascota?<svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Con el peso y la contextura de tu mascota ya podés elegir. Si te queda alguna duda, escribinos y te ayudamos antes de comprar.</p>
+        </details>
+        <details class="faq">
+          <summary>¿Puedo comprar por Mercado Libre?<svg class="icono" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Sí, también estamos ahí. <a href="https://www.mercadolibre.com.ar/" data-link="mercadolibre">Ver la tienda en Mercado Libre</a>.</p>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grilla">
+        <div>
+          <a class="pie__logo" href="index.html">
+            <img src="img/logo-circular.png" width="400" height="400" loading="lazy" alt="Mi mascota">
+          </a>
+          <p>Accesorios para el baño, el paseo y el cuidado diario de tu perro o gato.</p>
+        </div>
+        <nav aria-label="Páginas">
+          <h2>Páginas</h2>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="combos.html">Combos</a></li>
+            <li><a href="formulariodecompra.html">Comprar</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="https://wa.me/" data-link="whatsapp"><svg class="icono" aria-hidden="true"><use href="#i-mensaje"/></svg>WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/" data-link="instagram"><svg class="icono" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a></li>
+            <li><a href="https://www.mercadolibre.com.ar/" data-link="mercadolibre"><svg class="icono" aria-hidden="true"><use href="#i-tienda"/></svg>Mercado Libre</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">© 2026 Mi mascota. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="aviso" data-aviso>
+    <p data-aviso-texto aria-hidden="true"></p>
+    <a href="formulariodecompra.html">Ver pedido</a>
+  </div>
+  <p class="sr-only" role="status" data-anuncio></p>
+</body>
+</html>

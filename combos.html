@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Combos | Mi mascota</title>
+  <meta name="description" content="Kits de Mi mascota para baño, cepillado, paseo, uñas y comida: qué incluye cada uno y cuánto ahorrás comprándolo junto.">
+  <meta name="theme-color" content="#faf9ef">
+  <link rel="icon" type="image/png" href="img/logo-circular.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/carrito.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-huella" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 12.2c-2.6 0-5.7 3.3-5.7 5.9 0 1.6 1.2 2.5 2.7 2.5 1.2 0 1.9-.6 3-.6s1.8.6 3 .6c1.5 0 2.7-.9 2.7-2.5 0-2.6-3.1-5.9-5.7-5.9Z"/><ellipse cx="4.6" cy="10.6" rx="2" ry="2.6" transform="rotate(-22 4.6 10.6)"/><ellipse cx="9" cy="6" rx="2.1" ry="2.8" transform="rotate(-8 9 6)"/><ellipse cx="15" cy="6" rx="2.1" ry="2.8" transform="rotate(8 15 6)"/><ellipse cx="19.4" cy="10.6" rx="2" ry="2.6" transform="rotate(22 19.4 10.6)"/></g></symbol>
+    <symbol id="i-bolsa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></g></symbol>
+    <symbol id="i-tienda" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8 2.7 2.7 0 0 1-2 .8 2.7 2.7 0 0 1-2-.8A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></g></symbol>
+    <symbol id="i-mensaje" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></g></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></g></symbol>
+  </svg>
+
+  <a class="saltar" href="#contenido">Ir al contenido</a>
+
+  <p class="barra-aviso">Pedí por la web y coordinamos el envío por WhatsApp. También estamos en Mercado Libre.</p>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="logo" href="index.html">
+        <img src="img/logo-menu.png" width="260" height="174" alt="Mi mascota">
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="combos.html" aria-current="page">Combos</a></li>
+          <li>
+            <a href="formulariodecompra.html">
+              <svg class="icono" aria-hidden="true"><use href="#i-bolsa"/></svg>
+              Comprar
+              <span class="contador" data-contador hidden aria-hidden="true">0</span>
+              <span class="sr-only" data-contador-texto></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <div class="contenedor">
+      <header class="cabecera-pagina">
+        <h1>Combos</h1>
+        <p class="intro">Armamos kits para que no tengas que pensar: lo que usás junto, con 10% menos que comprando cada producto por separado.</p>
+      </header>
+
+      <ul class="combos">
+        <li>
+          <article class="combo" id="kit-bano" data-item aria-labelledby="t-kit-bano">
+            <div class="combo__fotos">
+              <img src="img/kit-bano.jpg" width="720" height="900" alt="Guante de baño azul con huella bordada, guante cepillo lila y guante quita pelos azul">
+            </div>
+            <div>
+              <h2 id="t-kit-bano">Kit Baño y Cepillado</h2>
+              <p>Los tres guantes que usás en el baño y el cepillado: el guante de baño con huella, el guante cepillo para desenredar y el guante quita pelos para juntar el pelo suelto.</p>
+              <p><strong>Incluye 3 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">1</span> guante para baño</li>
+                <li><span class="cantidad">1</span> guante cepillo</li>
+                <li><span class="cantidad">1</span> guante quita pelos</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-bano">$ 18.210</del></span>
+                <span class="precio" data-precio="kit-bano">$ 16.390</span>
+                <span class="ahorro" data-ahorro="kit-bano">Ahorrás $ 1.820 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-bano">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="combo" id="kit-cuidado" data-item aria-labelledby="t-kit-cuidado">
+            <div class="combo__fotos">
+              <img src="img/kit-cuidado.jpg" width="720" height="900" loading="lazy" alt="Cepillo azul con botón retráctil y alicate celeste con luz">
+            </div>
+            <div>
+              <h2 id="t-kit-cuidado">Kit Cuidado Diario</h2>
+              <p>Pelo y uñas resueltos: el cepillo con botón retráctil y el alicate con luz, que ilumina la uña para cortar sin miedo a lastimar.</p>
+              <p><strong>Incluye 2 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">1</span> cepillo con botón retráctil</li>
+                <li><span class="cantidad">1</span> alicate con luz</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-cuidado">$ 19.400</del></span>
+                <span class="precio" data-precio="kit-cuidado">$ 17.460</span>
+                <span class="ahorro" data-ahorro="kit-cuidado">Ahorrás $ 1.940 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-cuidado">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="combo" id="kit-cepillado-paseo" data-item aria-labelledby="t-kit-cepillado-paseo">
+            <div class="combo__fotos">
+              <img src="img/kit-cepillado-paseo.jpg" width="720" height="900" loading="lazy" alt="Guante quita pelos de malla negro, cepillo azul con botón retráctil y porta bolsas verde">
+            </div>
+            <div>
+              <h2 id="t-kit-cepillado-paseo">Kit Cepillado y Paseo</h2>
+              <p>Para el cepillado de todos los días y la salida a pasear: el guante quita pelos de malla, el cepillo con botón retráctil y el porta bolsas verde.</p>
+              <p><strong>Incluye 3 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">1</span> guante quita pelos de malla</li>
+                <li><span class="cantidad">1</span> cepillo con botón retráctil</li>
+                <li><span class="cantidad">1</span> porta bolsas verde</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-cepillado-paseo">$ 18.600</del></span>
+                <span class="precio" data-precio="kit-cepillado-paseo">$ 16.740</span>
+                <span class="ahorro" data-ahorro="kit-cepillado-paseo">Ahorrás $ 1.860 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-cepillado-paseo">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="combo" id="kit-paseo-unas" data-item aria-labelledby="t-kit-paseo-unas">
+            <div class="combo__fotos">
+              <img src="img/kit-paseo-unas.jpg" width="720" height="900" loading="lazy" alt="Porta bolsas gris con linterna y alicate para uñas rojo y negro">
+            </div>
+            <div>
+              <h2 id="t-kit-paseo-unas">Kit Paseo y Uñas</h2>
+              <p>El porta bolsas con linterna para los paseos de noche y el alicate para uñas de hoja de acero.</p>
+              <p><strong>Incluye 2 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">1</span> porta bolsas con linterna</li>
+                <li><span class="cantidad">1</span> alicate para uñas</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-paseo-unas">$ 8.850</del></span>
+                <span class="precio" data-precio="kit-paseo-unas">$ 7.970</span>
+                <span class="ahorro" data-ahorro="kit-paseo-unas">Ahorrás $ 880 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-paseo-unas">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="combo" id="kit-toallas" data-item aria-labelledby="t-kit-toallas">
+            <div class="combo__fotos">
+              <img src="img/kit-toallas.jpg" width="720" height="900" loading="lazy" alt="Dos toallas de secado, una azul y una roja, con bolsillos y huellas bordadas en las puntas">
+            </div>
+            <div>
+              <h2 id="t-kit-toallas">Kit Toallas</h2>
+              <p>Dos toallas de secado con bolsillos en las puntas para meter las manos: una para después del baño y otra para secar las patas al volver del paseo.</p>
+              <p><strong>Incluye 2 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">2</span> toallas (una azul y una roja)</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-toallas">$ 13.800</del></span>
+                <span class="precio" data-precio="kit-toallas">$ 12.420</span>
+                <span class="ahorro" data-ahorro="kit-toallas">Ahorrás $ 1.380 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-toallas">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="combo" id="kit-comederos" data-item aria-labelledby="t-kit-comederos">
+            <div class="combo__fotos">
+              <img src="img/kit-comederos.jpg" width="720" height="900" loading="lazy" alt="Dos comederos de acero inoxidable, uno grande y uno chico">
+            </div>
+            <div>
+              <h2 id="t-kit-comederos">Kit Comederos</h2>
+              <p>Los dos platos de acero inoxidable: el grande para la comida y el chico para el agua.</p>
+              <p><strong>Incluye 2 productos:</strong></p>
+              <ul class="combo__incluye">
+                <li><span class="cantidad">1</span> comedero grande</li>
+                <li><span class="cantidad">1</span> comedero chico</li>
+              </ul>
+              <p class="combo__precios">
+                <span class="nota">Por separado <del data-precio-separado="kit-comederos">$ 10.740</del></span>
+                <span class="precio" data-precio="kit-comederos">$ 9.670</span>
+                <span class="ahorro" data-ahorro="kit-comederos">Ahorrás $ 1.070 (10%)</span>
+              </p>
+              <button class="boton boton--primario" type="button" data-agregar="kit-comederos">Agregar al carrito</button>
+            </div>
+          </article>
+        </li>
+      </ul>
+
+      <section class="seccion" aria-labelledby="titulo-comparar">
+        <h2 id="titulo-comparar">Compará los kits</h2>
+        <div class="tabla" role="region" aria-labelledby="titulo-comparar" tabindex="0">
+          <table>
+            <caption>Precio de cada kit comparado con comprar sus productos por separado</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kit</th>
+                <th scope="col">Productos</th>
+                <th scope="col">Por separado</th>
+                <th scope="col">Precio del kit</th>
+                <th scope="col">Ahorro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="#kit-bano">Kit Baño y Cepillado</a></th>
+                <td>3</td>
+                <td data-precio-separado="kit-bano">$ 18.210</td>
+                <td data-precio="kit-bano">$ 16.390</td>
+                <td data-ahorro-corto="kit-bano">$ 1.820 (10%)</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="#kit-cuidado">Kit Cuidado Diario</a></th>
+                <td>2</td>
+                <td data-precio-separado="kit-cuidado">$ 19.400</td>
+                <td data-precio="kit-cuidado">$ 17.460</td>
+                <td data-ahorro-corto="kit-cuidado">$ 1.940 (10%)</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="#kit-cepillado-paseo">Kit Cepillado y Paseo</a></th>
+                <td>3</td>
+                <td data-precio-separado="kit-cepillado-paseo">$ 18.600</td>
+                <td data-precio="kit-cepillado-paseo">$ 16.740</td>
+                <td data-ahorro-corto="kit-cepillado-paseo">$ 1.860 (10%)</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="#kit-paseo-unas">Kit Paseo y Uñas</a></th>
+                <td>2</td>
+                <td data-precio-separado="kit-paseo-unas">$ 8.850</td>
+                <td data-precio="kit-paseo-unas">$ 7.970</td>
+                <td data-ahorro-corto="kit-paseo-unas">$ 880 (10%)</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="#kit-toallas">Kit Toallas</a></th>
+                <td>2</td>
+                <td data-precio-separado="kit-toallas">$ 13.800</td>
+                <td data-precio="kit-toallas">$ 12.420</td>
+                <td data-ahorro-corto="kit-toallas">$ 1.380 (10%)</td>
+              </tr>
+              <tr>
+                <th scope="row"><a href="#kit-comederos">Kit Comederos</a></th>
+                <td>2</td>
+                <td data-precio-separado="kit-comederos">$ 10.740</td>
+                <td data-precio="kit-comederos">$ 9.670</td>
+                <td data-ahorro-corto="kit-comederos">$ 1.070 (10%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="pie__grilla">
+        <div>
+          <a class="pie__logo" href="index.html">
+            <img src="img/logo-circular.png" width="400" height="400" loading="lazy" alt="Mi mascota">
+          </a>
+          <p>Accesorios para el baño, el paseo y el cuidado diario de tu perro o gato.</p>
+        </div>
+        <nav aria-label="Páginas">
+          <h2>Páginas</h2>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="combos.html">Combos</a></li>
+            <li><a href="formulariodecompra.html">Comprar</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a href="https://wa.me/" data-link="whatsapp"><svg class="icono" aria-hidden="true"><use href="#i-mensaje"/></svg>WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/" data-link="instagram"><svg class="icono" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a></li>
+            <li><a href="https://www.mercadolibre.com.ar/" data-link="mercadolibre"><svg class="icono" aria-hidden="true"><use href="#i-tienda"/></svg>Mercado Libre</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="pie__legal">© 2026 Mi mascota. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <div class="aviso" data-aviso>
+    <p data-aviso-texto aria-hidden="true"></p>
+    <a href="formulariodecompra.html">Ver pedido</a>
+  </div>
+  <p class="sr-only" role="status" data-anuncio></p>
+</body>
+</html>
