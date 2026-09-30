@@ -867,8 +867,19 @@ ul {
   border-radius: 50%;
 }
 
-.banda h2 {
+.banda h2,
+.banda h3 {
   color: inherit;
+}
+
+.banda h3 {
+  font-size: clamp(2rem, 1.65rem + 1.5vw, 2.6rem);
+}
+
+.kits-home {
+  display: grid;
+  gap: var(--e-5);
+  list-style: none;
 }
 
 .banda p {
@@ -924,6 +935,15 @@ ul {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: var(--e-6);
     padding: var(--e-6);
+  }
+
+  /* En la Home los kits alternan: el segundo lleva la foto a la derecha */
+  .kits-home > li:nth-child(even) .banda {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  }
+
+  .kits-home > li:nth-child(even) .banda img {
+    order: 1;
   }
 }
 
