@@ -38,15 +38,15 @@ var PRODUCTOS = {
   },
   'guante-quitapelos': {
     codigo: 'MM-03',
-    nombre: 'Guante quita pelos',
+    nombre: 'Guante quita pelos', // el de malla negro, todavía sin foto individual
     precio: 2800,
-    imagen: 'img/guante-quitapelos.jpg',
+    enWeb: false,
     variantes: []
   },
   'porta-bolsas': {
     codigo: 'MM-04',
     nombre: 'Porta bolsas verde',
-    precio: 7400,
+    precio: 4750, // la clienta confirmó que en el Excel está invertido con el de linterna
     imagen: 'img/porta-bolsas-verde.jpg',
     variantes: []
   },
@@ -67,15 +67,15 @@ var PRODUCTOS = {
   'porta-linterna': {
     codigo: 'MM-07',
     nombre: 'Porta bolsas con linterna',
-    precio: 4750,
+    precio: 7400, // la clienta confirmó que en el Excel está invertido con el verde
     imagen: 'img/porta-bolsas-linterna.jpg',
     variantes: []
   },
   'guantes-bano': {
     codigo: 'MM-08',
-    nombre: 'Guante para baño',
+    nombre: 'Guante para baño', // el azul con negro, de cinco dedos
     precio: 5420,
-    enWeb: false,
+    imagen: 'img/guante-bano.jpg',
     variantes: []
   },
   'guante-cepillo': {
@@ -140,9 +140,9 @@ var COMBOS = {
     nombre: 'Kit Baño y Cepillado',
     imagen: 'img/kit-bano.jpg',
     incluye: [
-      { id: 'guantes-bano', cantidad: 1 },
+      { id: 'toallas', cantidad: 1 },
       { id: 'guante-cepillo', cantidad: 1 },
-      { id: 'guante-quitapelos', cantidad: 1 }
+      { id: 'guantes-bano', cantidad: 1 }
     ]
   },
   'kit-toallas': {
