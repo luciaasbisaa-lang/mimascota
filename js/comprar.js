@@ -25,6 +25,20 @@
     return div.innerHTML;
   }
 
+  // Limpia lo que escribe el cliente antes de validarlo y de armar el mensaje: saca caracteres de control
+  // e invisibles (incluidos los que invierten el sentido del texto), junta espacios y saltos de línea
+  // (así nadie puede agregar renglones falsos al pedido, como un "Total:") y corta al largo máximo del campo.
+  function limpiar(campo) {
+    var maximo = campo.maxLength > 0 ? campo.maxLength : 500;
+    return String(campo.value)
+      .replace(/[\u0000-\u001F\u007F-\u009F\u200B-\u200F\u202A-\u202E\u2060-\u2069\uFEFF]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, maximo);
+  }
+
+  var FORMAS_DE_PAGO = ['Mercado Pago', 'Transferencia bancaria', 'Efectivo'];
+
   /* ---------- Resumen del pedido ---------- */
 
   function selector(indice, parte, etiqueta, opciones, elegida, etiquetaVisible) {
@@ -71,7 +85,7 @@
           '<div class="cantidad-control">' +
             '<button type="button" data-accion="menos" data-indice="' + i + '" aria-label="Restar una unidad de ' + nombre + '"' + (linea.cantidad <= 1 ? ' disabled' : '') + '>' + icono('menos') + '</button>' +
             '<output aria-label="Cantidad de ' + nombre + '">' + linea.cantidad + '</output>' +
-            '<button type="button" data-accion="mas" data-indice="' + i + '" aria-label="Sumar una unidad de ' + nombre + '">' + icono('mas') + '</button>' +
+            '<button type="button" data-accion="mas" data-indice="' + i + '" aria-label="Sumar una unidad de ' + nombre + '"' + (linea.cantidad >= Carrito.maximo ? ' disabled' : '') + '>' + icono('mas') + '</button>' +
           '</div>' +
           '<p class="precio linea__subtotal">' + Carrito.formatear(item.precio * linea.cantidad) + '</p>' +
           '<button type="button" class="quitar" data-accion="quitar" data-indice="' + i + '" aria-label="Quitar ' + nombre + ' del pedido">' + icono('tacho') + '</button>' +
@@ -98,7 +112,7 @@
     if (!linea) return;
     var nombre = Carrito.buscar(linea.id).nombre;
 
-    if (accion === 'mas') linea.cantidad += 1;
+    if (accion === 'mas' && linea.cantidad < Carrito.maximo) linea.cantidad += 1;
     if (accion === 'menos' && linea.cantidad > 1) linea.cantidad -= 1;
     if (accion === 'quitar') lineas.splice(i, 1);
 
@@ -154,25 +168,41 @@
 
   /* ---------- Validación ---------- */
 
+  // Cada regla recibe el valor ya limpio y devuelve el mensaje de error, o '' si está bien.
+  // Los signos < > { } no hacen falta en ningún dato y son los que se usan para inyectar código.
+  var PELIGROSOS = /[<>{}]/;
   var reglas = {
     nombre: function (v) {
-      return v ? '' : 'Escribí tu nombre y apellido.';
+      if (!v) return 'Escribí tu nombre y apellido.';
+      if (!/^[\p{L}\p{M}' ’.-]{2,}$/u.test(v)) return 'Escribí tu nombre y apellido solo con letras.';
+      return '';
     },
     telefono: function (v) {
       if (!v) return 'Escribí tu teléfono para que podamos coordinar el envío.';
-      if (v.replace(/\D/g, '').length < 8) return 'El teléfono tiene que tener al menos 8 números, con el código de área.';
+      if (!/^[0-9+() .-]+$/.test(v)) return 'Escribí el teléfono solo con números. Podés usar espacios, guiones o el signo +.';
+      var digitos = v.replace(/\D/g, '').length;
+      if (digitos < 8) return 'El teléfono tiene que tener al menos 8 números, con el código de área.';
+      if (digitos > 15) return 'Revisá el teléfono: tiene demasiados números.';
       return '';
     },
     email: function (v) {
       if (!v) return 'Escribí tu correo electrónico.';
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Revisá el correo: tiene que tener el formato nombre@ejemplo.com.';
+      if (!/^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[^\s@<>()[\]\\,;:"]{2,}$/.test(v)) return 'Revisá el correo: tiene que tener el formato nombre@ejemplo.com.';
       return '';
     },
     direccion: function (v) {
-      return v ? '' : 'Escribí la dirección de entrega, con calle y número.';
+      if (!v) return 'Escribí la dirección de entrega, con calle y número.';
+      if (PELIGROSOS.test(v)) return 'Sacá los signos < > { } de la dirección.';
+      return '';
     },
     localidad: function (v) {
-      return v ? '' : 'Escribí tu localidad.';
+      if (!v) return 'Escribí tu localidad.';
+      if (!/^[\p{L}\p{M}\p{N}' ’.,()-]+$/u.test(v)) return 'Escribí la localidad solo con letras y números.';
+      return '';
+    },
+    cp: function (v) {
+      if (v && !/^[A-Za-z0-9 -]{4,10}$/.test(v)) return 'Revisá el código postal. Por ejemplo: 3000 o S3000ABC.';
+      return '';
     }
   };
 
@@ -199,7 +229,7 @@
   }
 
   function validar(campo) {
-    var mensaje = reglas[campo.id](campo.value.trim());
+    var mensaje = reglas[campo.id](limpiar(campo));
     mostrarError(campo, mensaje);
     return mensaje;
   }
@@ -286,12 +316,14 @@
     errores.hidden = true;
 
     var datos = {};
-    new FormData(formulario).forEach(function (valor, clave) {
-      datos[clave] = String(valor).trim();
+    ['nombre', 'telefono', 'email', 'direccion', 'localidad', 'cp', 'comentarios'].forEach(function (id) {
+      datos[id] = limpiar(document.getElementById(id));
     });
+    var pago = formulario.querySelector('input[name="pago"]:checked');
+    datos.pago = pago && FORMAS_DE_PAGO.indexOf(pago.value) !== -1 ? pago.value : FORMAS_DE_PAGO[0];
 
     var url = 'https://wa.me/' + TIENDA.whatsapp + '?text=' + encodeURIComponent(armarMensaje(datos));
-    window.open(url, '_blank', 'noopener');
+    window.open(url, '_blank', 'noopener,noreferrer');
 
     confirmacion.querySelector('[data-enlace-whatsapp]').href = url;
     compra.hidden = true;

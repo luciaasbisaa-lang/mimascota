@@ -2,7 +2,7 @@
  * Datos de la tienda Mi mascota.
  * Este es el único archivo que hay que tocar para cambiar precios, links o el número de WhatsApp.
  * Los precios son en pesos argentinos, sin puntos ni signos: 12900 = $12.900.
- * Salen del Excel maestro (planilla "Mi_mascota_Sistema_Maestro", hoja Productos, columna PRECIO PUBLICO).
+ * Salen de la lista de precios de la tienda (columna PRECIO PUBLICO).
  */
 
 var TIENDA = {
@@ -17,9 +17,9 @@ var TIENDA = {
 };
 
 /*
- * Productos. "codigo" es el del Excel maestro.
+ * Productos. "codigo" es el código interno del producto.
  * enWeb: false = no tiene foto individual todavía: no se vende suelto, pero su precio cuenta para los kits.
- * precio: null = precio a confirmar (se muestra "Consultar precio" en vez del carrito).
+ * precio: null = precio a confirmar (se muestra "Precio a confirmar" y no se vende por la web).
  */
 var PRODUCTOS = {
   'palita': {
@@ -46,7 +46,7 @@ var PRODUCTOS = {
   'porta-bolsas': {
     codigo: 'MM-04',
     nombre: 'Porta bolsas verde',
-    precio: 4750, // la clienta confirmó que en el Excel está invertido con el de linterna
+    precio: 4750, // precio confirmado (en la lista figura cruzado con el de linterna)
     imagen: 'img/porta-bolsas-verde.jpg',
     variantes: []
   },
@@ -67,7 +67,7 @@ var PRODUCTOS = {
   'porta-linterna': {
     codigo: 'MM-07',
     nombre: 'Porta bolsas con linterna',
-    precio: 7400, // la clienta confirmó que en el Excel está invertido con el verde
+    precio: 7400, // precio confirmado (en la lista figura cruzado con el verde)
     imagen: 'img/porta-bolsas-linterna.jpg',
     variantes: []
   },
@@ -123,7 +123,7 @@ var PRODUCTOS = {
   'mochila': {
     codigo: '',
     nombre: 'Mochila transportadora con visor',
-    precio: 54000, // no está en el Excel: precio pasado por la clienta
+    precio: 54000, // no está en la lista de precios: confirmado aparte
     imagen: 'img/mochila-rosa.jpg',
     etiquetaVariante: 'Color',
     variantes: ['Rosa', 'Negra'],

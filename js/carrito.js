@@ -7,7 +7,12 @@
   'use strict';
 
   var CLAVE = 'mimascota-carrito';
+  var MAXIMO = 99; // unidades por línea del carrito
   var memoria = []; // respaldo si el navegador no deja guardar (modo privado, etc.)
+
+  function tiene(objeto, clave) {
+    return Object.prototype.hasOwnProperty.call(objeto, clave);
+  }
 
   var formato = new Intl.NumberFormat('es-AR', {
     style: 'currency',
@@ -32,8 +37,9 @@
 
   // Devuelve un producto o un combo por su id, con el tipo marcado.
   function buscar(id) {
-    if (PRODUCTOS[id]) return Object.assign({ id: id, tipo: 'producto' }, PRODUCTOS[id]);
-    if (COMBOS[id]) return Object.assign({ id: id, tipo: 'combo', variantes: [], precio: precioCombo(id) }, COMBOS[id]);
+    if (typeof id !== 'string') return null;
+    if (tiene(PRODUCTOS, id)) return Object.assign({ id: id, tipo: 'producto' }, PRODUCTOS[id]);
+    if (tiene(COMBOS, id)) return Object.assign({ id: id, tipo: 'combo', variantes: [], precio: precioCombo(id) }, COMBOS[id]);
     return null;
   }
 
@@ -45,7 +51,7 @@
   }
 
   function imagenDe(item, variante) {
-    return (item.imagenesPorVariante && item.imagenesPorVariante[variante]) || item.imagen;
+    return (item.imagenesPorVariante && tiene(item.imagenesPorVariante, variante) && item.imagenesPorVariante[variante]) || item.imagen;
   }
 
   function ahorro(comboId) {
@@ -56,11 +62,33 @@
 
   /* ---------- Guardado ---------- */
 
+  // Lo guardado en el navegador se puede editar a mano: solo se aceptan líneas con un producto que exista,
+  // una cantidad entera entre 1 y MAXIMO, y modelos o colores que estén en datos.js.
+  function normalizar(linea) {
+    if (!linea || typeof linea !== 'object' || !seVende(linea.id)) return null;
+    var cantidad = Math.floor(Number(linea.cantidad));
+    if (!(cantidad >= 1)) return null;
+    var item = buscar(linea.id);
+    var limpia = { id: item.id, variante: null, cantidad: Math.min(cantidad, MAXIMO) };
+    if (item.tipo === 'producto' && item.variantes.length) {
+      limpia.variante = item.variantes.indexOf(linea.variante) !== -1 ? linea.variante : item.variantes[0];
+    }
+    if (item.tipo === 'combo') {
+      limpia.opciones = {};
+      partesElegibles(item.id).forEach(function (parte) {
+        var variantes = PRODUCTOS[parte.id].variantes;
+        var elegida = linea.opciones && typeof linea.opciones === 'object' && linea.opciones[parte.id];
+        limpia.opciones[parte.id] = variantes.indexOf(elegida) !== -1 ? elegida : variantes[0];
+      });
+    }
+    return limpia;
+  }
+
   function leer() {
     try {
       var datos = JSON.parse(localStorage.getItem(CLAVE));
       if (Array.isArray(datos)) {
-        return datos.filter(function (linea) { return seVende(linea.id) && linea.cantidad > 0; });
+        return datos.map(normalizar).filter(Boolean);
       }
       return [];
     } catch (e) {
@@ -91,7 +119,7 @@
       return l.id === id && (esCombo || l.variante === variante);
     });
     if (existente) {
-      existente.cantidad += cantidad || 1;
+      existente.cantidad = Math.min(existente.cantidad + (cantidad || 1), MAXIMO);
     } else if (esCombo) {
       var opciones = {};
       partesElegibles(id).forEach(function (parte) {
@@ -251,6 +279,7 @@
     total: total,
     formatear: formatear,
     precioSeparado: precioSeparado,
+    maximo: MAXIMO,
     partesElegibles: partesElegibles,
     imagenDe: imagenDe
   };
