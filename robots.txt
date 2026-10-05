@@ -1,0 +1,7 @@
+# Mi mascota: se puede indexar todo el sitio.
+# En GitHub Pages este archivo queda en /mimascota/robots.txt y los buscadores solo leen el de la raíz
+# del dominio, así que empieza a valer cuando el sitio tenga dominio propio. Mientras tanto no se bloquea nada.
+User-agent: *
+Allow: /
+
+Sitemap: https://luciaasbisaa-lang.github.io/mimascota/sitemap.xml

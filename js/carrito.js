@@ -147,6 +147,28 @@
     });
   }
 
+  // Datos estructurados para Google (JSON-LD): cada Product lleva en productID su id de datos.js.
+  // Los precios escritos en el HTML se reemplazan por los de datos.js, así nunca quedan desfasados.
+  function completarDatosEstructurados() {
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function (script) {
+      var datos;
+      try { datos = JSON.parse(script.textContent); } catch (e) { return; }
+      var cambio = false;
+      (function recorrer(nodo) {
+        if (!nodo || typeof nodo !== 'object') return;
+        if (nodo['@type'] === 'Product' && nodo.productID && nodo.offers) {
+          var item = buscar(nodo.productID);
+          if (item && item.precio != null && nodo.offers.price !== item.precio) {
+            nodo.offers.price = item.precio;
+            cambio = true;
+          }
+        }
+        Object.keys(nodo).forEach(function (clave) { recorrer(nodo[clave]); });
+      })(datos);
+      if (cambio) script.textContent = JSON.stringify(datos);
+    });
+  }
+
   function completarLinks() {
     var links = {
       whatsapp: 'https://wa.me/' + TIENDA.whatsapp,
@@ -234,6 +256,7 @@
   };
 
   completarPrecios();
+  completarDatosEstructurados();
   completarVariantes();
   completarLinks();
   actualizarContador();

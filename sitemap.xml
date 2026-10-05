@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solo páginas indexables. formulariodecompra.html (el carrito) va con noindex y no se incluye.
+     lastmod: fecha del último cambio de contenido de cada página. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://luciaasbisaa-lang.github.io/mimascota/</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+  <url>
+    <loc>https://luciaasbisaa-lang.github.io/mimascota/productos.html</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+  <url>
+    <loc>https://luciaasbisaa-lang.github.io/mimascota/combos.html</loc>
+    <lastmod>2026-10-05</lastmod>
+  </url>
+</urlset>
