@@ -2,7 +2,7 @@
  * Datos de la tienda Mi mascota.
  * Este es el único archivo que hay que tocar para cambiar precios, links o el número de WhatsApp.
  * Los precios son en pesos argentinos, sin puntos ni signos: 12900 = $12.900.
- * Salen de la lista de precios de la tienda (columna PRECIO PUBLICO).
+ * Salen de la lista de precios de la tienda, con un 10% de aumento.
  */
 
 var TIENDA = {
@@ -25,105 +25,105 @@ var PRODUCTOS = {
   'palita': {
     codigo: 'MM-01',
     nombre: 'Palita para excremento',
-    precio: 25340,
+    precio: 27870,
     imagen: 'img/palita.jpg',
     variantes: []
   },
   'cepillo': {
     codigo: 'MM-02',
     nombre: 'Cepillo con botón retráctil',
-    precio: 8400,
+    precio: 9240,
     imagen: 'img/cepillo-retractil.jpg',
     variantes: []
   },
   'guante-quitapelos': {
     codigo: 'MM-03',
     nombre: 'Guante quita pelos', // el de malla negro, todavía sin foto individual
-    precio: 2800,
+    precio: 3080,
     enWeb: false,
     variantes: []
   },
   'porta-bolsas': {
     codigo: 'MM-04',
     nombre: 'Porta bolsas verde',
-    precio: 4750, // precio confirmado (en la lista figura cruzado con el de linterna)
+    precio: 5230, // precio confirmado (en la lista figura cruzado con el de linterna)
     imagen: 'img/porta-bolsas-verde.jpg',
     variantes: []
   },
   'correa': {
     codigo: 'MM-05',
     nombre: 'Correa con porta bolsas',
-    precio: 8000,
+    precio: 8800,
     imagen: 'img/correa-porta-bolsas.jpg',
     variantes: []
   },
   'toallas': {
     codigo: 'MM-06',
     nombre: 'Toalla',
-    precio: 6900,
+    precio: 7590,
     enWeb: false,
     variantes: []
   },
   'porta-linterna': {
     codigo: 'MM-07',
     nombre: 'Porta bolsas con linterna',
-    precio: 7400, // precio confirmado (en la lista figura cruzado con el verde)
+    precio: 8140, // precio confirmado (en la lista figura cruzado con el verde)
     imagen: 'img/porta-bolsas-linterna.jpg',
     variantes: []
   },
   'guantes-bano': {
     codigo: 'MM-08',
     nombre: 'Guante para baño', // el azul con negro, de cinco dedos
-    precio: 5420,
+    precio: 5960,
     imagen: 'img/guante-bano.jpg',
     variantes: []
   },
   'guante-cepillo': {
     codigo: 'MM-09',
     nombre: 'Guante cepillo',
-    precio: 9990,
+    precio: 10990,
     enWeb: false,
     variantes: []
   },
   'alicate': {
     codigo: 'MM-10',
     nombre: 'Alicate para uñas',
-    precio: 4100,
+    precio: 4510,
     imagen: 'img/alicate-unas.jpg',
     variantes: []
   },
   'alicate-luz': {
     codigo: 'MM-11',
     nombre: 'Alicate con luz',
-    precio: 11000,
+    precio: 12100,
     enWeb: false,
     variantes: []
   },
   'comedero-doble': {
     codigo: 'MM-12',
     nombre: 'Comedero doble',
-    precio: 17600,
+    precio: 19360,
     enWeb: false,
     variantes: []
   },
   'comedero-chico': {
     codigo: 'MM-13',
     nombre: 'Comedero chico',
-    precio: 4750,
+    precio: 5230,
     imagen: 'img/comedero-chico.jpg',
     variantes: []
   },
   'comedero-grande': {
     codigo: 'MM-14',
     nombre: 'Comedero grande',
-    precio: 5990,
+    precio: 6590,
     imagen: 'img/comedero-grande.jpg',
     variantes: []
   },
   'mochila': {
-    codigo: '',
+    codigo: 'MM-15',
     nombre: 'Mochila transportadora con visor',
-    precio: 54000, // no está en la lista de precios: confirmado aparte
+    precio: 59400,
     imagen: 'img/mochila-rosa.jpg',
     etiquetaVariante: 'Color',
     variantes: ['Rosa', 'Negra'],
