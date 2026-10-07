@@ -4,17 +4,19 @@
 
 :root {
   /* Colores de la marca */
-  --menta: #6fcdb3;          /* principal: blobs, fondos de bloque */
-  --menta-suave: #e3f5ee;    /* superficies secundarias */
-  --verde: #168466;          /* acento: botones con texto blanco */
-  --verde-hondo: #0f5c47;    /* links y texto de acento sobre crema, footer */
-  --verde-noche: #0b4637;    /* hover del verde hondo */
-  --crema: #faf9ef;          /* fondo de página */
+  --verde: #00a676;          /* principal: botones, pie, blobs, íconos */
+  --verde-suave: #ddf3ea;    /* superficies secundarias: tinte del principal */
+  --verde-hondo: #00704f;    /* texto chico y links: el principal oscurecido para llegar al contraste mínimo (5,7:1 sobre crema) */
+  --verde-noche: #002e20;    /* texto sobre el verde, el amarillo y el naranja (el blanco no llega al contraste sobre esos tres) */
+  --amarillo: #ffc93c;       /* acento: barra superior, sello, banda de kits */
+  --amarillo-suave: #ffeec4; /* hover y superficies cálidas */
+  --naranja: #ff7a00;        /* acento: contador, ahorro y detalles decorativos (nunca texto sobre crema: no llega al contraste) */
+  --crema: #fff6e9;          /* neutro: fondo de página */
   --blanco: #ffffff;
-  --tinta: #147a5e;          /* texto chico: un tono más oscuro que #168466 para llegar al contraste mínimo (5:1 sobre crema) */
-  --tinta-suave: #147a5e;    /* texto secundario: mismo verde, la jerarquía va por tamaño y peso */
-  --titulos: #168466;        /* títulos grandes: verde turquesa de la marca */
-  --borde: #d6e6df;          /* bordes decorativos */
+  --tinta: #00704f;          /* texto */
+  --tinta-suave: #00704f;    /* texto secundario: mismo verde, la jerarquía va por tamaño y peso */
+  --titulos: #009c70;        /* títulos grandes: el principal apenas oscurecido para llegar a 3:1 sobre crema */
+  --borde: #f0dfc6;          /* bordes decorativos: crema más oscuro */
   --borde-campo: #6b837c;    /* bordes de campos (3:1 sobre blanco) */
   --error: #b3261e;
 
@@ -37,7 +39,7 @@
   --radio-s: 12px;
   --radio-m: 20px;
   --radio-l: 32px;
-  --sombra: 0 1px 2px rgba(29, 58, 51, 0.06), 0 10px 28px rgba(29, 58, 51, 0.08);
+  --sombra: 0 1px 2px rgba(0, 46, 32, 0.06), 0 10px 28px rgba(0, 46, 32, 0.08);
 }
 
 /* ---------- Base ---------- */
@@ -59,7 +61,7 @@ body {
   background: var(--crema);
   color: var(--tinta);
   font: 400 1.0625rem/1.6 var(--fuente-texto);
-  -webkit-tap-highlight-color: rgba(111, 205, 179, 0.3);
+  -webkit-tap-highlight-color: rgba(0, 166, 118, 0.25);
 }
 
 h1,
@@ -91,6 +93,7 @@ a {
 
 a:hover {
   color: var(--verde-noche);
+  text-decoration-color: var(--naranja);
 }
 
 img {
@@ -181,23 +184,24 @@ ul {
   transform: scale(0.98);
 }
 
+/* El texto del botón principal va en verde noche: el blanco sobre #00a676 no llega al contraste mínimo */
 .boton--primario {
   background: var(--verde);
-  color: var(--blanco);
+  color: var(--verde-noche);
 }
 
 .boton--primario:hover {
-  background: var(--verde-hondo);
-  color: var(--blanco);
+  background: var(--amarillo);
+  color: var(--verde-noche);
 }
 
 .boton--oscuro {
-  background: var(--verde-hondo);
+  background: var(--verde-noche);
   color: var(--blanco);
 }
 
 .boton--oscuro:hover {
-  background: var(--verde-noche);
+  background: var(--verde-hondo);
   color: var(--blanco);
 }
 
@@ -208,7 +212,7 @@ ul {
 }
 
 .boton--secundario:hover {
-  background: var(--menta-suave);
+  background: var(--amarillo-suave);
   color: var(--verde-noche);
 }
 
@@ -225,9 +229,10 @@ ul {
   margin: 0;
   max-width: none;
   padding: var(--e-2) var(--margen);
-  background: var(--verde-hondo);
-  color: var(--crema);
+  background: var(--amarillo);
+  color: var(--verde-noche);
   font-size: 0.875rem;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -301,14 +306,14 @@ ul {
 }
 
 .nav a:hover {
-  background: var(--menta-suave);
+  background: var(--verde-suave);
   color: var(--tinta);
 }
 
 .nav a[aria-current="page"] {
-  background: var(--menta-suave);
+  background: var(--verde-suave);
   font-weight: 700;
-  text-decoration: underline 2px var(--verde);
+  text-decoration: underline wavy 2px var(--naranja);
   text-underline-offset: 6px;
 }
 
@@ -324,8 +329,8 @@ ul {
   height: 22px;
   padding: 0 6px;
   border-radius: 999px;
-  background: var(--verde-hondo);
-  color: var(--blanco);
+  background: var(--naranja);
+  color: var(--verde-noche);
   font-size: 0.8125rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -381,7 +386,7 @@ ul {
   max-width: calc(100% - 2 * var(--margen));
   padding: 12px 12px 12px 20px;
   border-radius: 999px;
-  background: var(--verde-hondo);
+  background: var(--verde-noche);
   color: var(--crema);
   box-shadow: var(--sombra);
   opacity: 0;
@@ -408,8 +413,8 @@ ul {
   min-height: 40px;
   padding: 0 16px;
   border-radius: 999px;
-  background: var(--menta);
-  color: var(--verde-hondo);
+  background: var(--amarillo);
+  color: var(--verde-noche);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -469,7 +474,7 @@ ul {
   overflow: hidden;
   aspect-ratio: 4 / 5;
   border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%;
-  background: var(--menta);
+  background: var(--verde);
 }
 
 .blob__marco img {
@@ -483,7 +488,7 @@ ul {
   position: absolute;
   inset: -12px;
   z-index: -1;
-  border: 2px solid var(--verde);
+  border: 3px solid var(--naranja);
   border-radius: 55% 45% 50% 50% / 45% 55% 45% 55%;
   transform: rotate(-5deg);
   pointer-events: none;
@@ -491,8 +496,8 @@ ul {
 
 .huellas {
   position: absolute;
-  color: var(--menta);
-  opacity: 0.45;
+  color: var(--amarillo);
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -583,8 +588,9 @@ ul {
   height: 118px;
   margin: 0;
   border-radius: 50%;
-  background: var(--verde-hondo);
-  color: var(--crema);
+  background: var(--amarillo);
+  box-shadow: 0 0 0 4px var(--crema), 0 0 0 7px var(--naranja);
+  color: var(--verde-noche);
   font-family: var(--fuente-titulos);
   font-size: 0.9375rem;
   line-height: 1.2;
@@ -604,14 +610,20 @@ ul {
   top: 24px;
   right: -40px;
   width: 190px;
-  color: var(--verde);
+  color: var(--naranja);
   pointer-events: none;
 }
 
-/* Las huellas y el garabato solo entran cuando hay margen libre al costado del texto */
+/* Las huellas y el garabato solo entran cuando hay margen libre al costado del texto
+   (las huellas necesitan unos 110px a la izquierda para no pisar el logo) */
 @media (max-width: 1279px) {
-  .hero .huellas,
   .garabato {
+    display: none;
+  }
+}
+
+@media (max-width: 1439px) {
+  .hero .huellas {
     display: none;
   }
 }
@@ -692,8 +704,17 @@ ul {
   height: 48px;
   padding: 12px;
   border-radius: 50%;
-  background: var(--menta-suave);
-  color: var(--verde-hondo);
+  background: var(--verde);
+  color: var(--verde-noche);
+}
+
+/* Un color de la paleta por ícono */
+.confianza li:nth-child(2) .icono {
+  background: var(--amarillo);
+}
+
+.confianza li:nth-child(3) .icono {
+  background: var(--naranja);
 }
 
 .confianza strong {
@@ -736,19 +757,19 @@ ul {
 .categorias img {
   width: min(100%, 148px);
   aspect-ratio: 1;
-  border: 3px solid transparent;
+  border: 4px solid var(--amarillo);
   border-radius: 50%;
   object-fit: cover;
-  background: var(--menta);
+  background: var(--verde);
   transition: border-color 0.15s ease;
 }
 
 .categorias a:hover img {
-  border-color: var(--verde);
+  border-color: var(--naranja);
 }
 
 .categorias a:hover span {
-  text-decoration: underline 2px var(--verde);
+  text-decoration: underline wavy 2px var(--naranja);
   text-underline-offset: 4px;
 }
 
@@ -834,7 +855,7 @@ ul {
 }
 
 .tarjeta h3 a:hover {
-  text-decoration: underline 2px var(--verde);
+  text-decoration: underline wavy 2px var(--naranja);
 }
 
 .tarjeta .precio {
@@ -850,12 +871,12 @@ ul {
 
 .banda {
   display: grid;
-  color: var(--verde-hondo); /* #168466 sobre menta no se lee: acá va el verde oscuro */
+  color: var(--verde-noche); /* sobre el amarillo, los otros verdes no llegan al contraste mínimo */
   gap: var(--e-5);
   align-items: center;
   padding: var(--e-5) var(--e-4);
   border-radius: var(--radio-l);
-  background: var(--menta);
+  background: var(--amarillo);
 }
 
 .banda img {
@@ -882,8 +903,13 @@ ul {
   list-style: none;
 }
 
+/* Los kits de la Home alternan amarillo y verde claro */
+.kits-home > li:nth-child(even) .banda {
+  background: var(--verde-suave);
+}
+
 .banda p {
-  color: var(--verde-hondo);
+  color: var(--verde-noche);
 }
 
 .banda__precios {
@@ -895,7 +921,7 @@ ul {
 }
 
 .banda__precios del {
-  color: var(--verde-hondo);
+  color: var(--verde-noche);
   font-variant-numeric: tabular-nums;
 }
 
@@ -908,8 +934,8 @@ ul {
   display: inline-block;
   padding: 4px 12px;
   border-radius: 999px;
-  background: var(--crema);
-  color: var(--verde-hondo);
+  background: var(--naranja);
+  color: var(--verde-noche);
   font-size: 0.9375rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -926,7 +952,7 @@ ul {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  color: var(--verde-hondo);
+  color: var(--verde-noche);
   font-weight: 600;
 }
 
@@ -972,8 +998,8 @@ ul {
 }
 
 .chips a:hover {
-  border-color: var(--verde);
-  background: var(--menta-suave);
+  border-color: var(--naranja);
+  background: var(--amarillo-suave);
   color: var(--tinta);
 }
 
@@ -991,7 +1017,7 @@ ul {
 .categoria > h2 .icono {
   width: 30px;
   height: 30px;
-  color: var(--menta);
+  color: var(--naranja);
 }
 
 .producto {
@@ -1043,8 +1069,7 @@ ul {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--menta);
-  box-shadow: 0 0 0 2px var(--verde-hondo) inset;
+  background: var(--naranja);
 }
 
 .producto__compra {
@@ -1073,7 +1098,7 @@ select {
   padding: 0 40px 0 14px;
   border: 1.5px solid var(--borde-campo);
   border-radius: var(--radio-s);
-  background: var(--blanco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23168466' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
+  background: var(--blanco) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2300704f' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
   appearance: none;
   cursor: pointer;
 }
@@ -1151,8 +1176,8 @@ select {
   margin-bottom: var(--e-3);
   padding: 12px;
   border-radius: 50%;
-  background: var(--menta-suave);
-  color: var(--verde-hondo);
+  background: var(--amarillo);
+  color: var(--verde-noche);
 }
 
 .pagos h3 {
@@ -1254,7 +1279,7 @@ select {
   min-width: 40px;
   padding: 2px 8px;
   border-radius: 999px;
-  background: var(--menta-suave);
+  background: var(--verde-suave);
   color: var(--verde-hondo);
   font-size: 0.9375rem;
   font-weight: 700;
@@ -1277,10 +1302,6 @@ select {
 .combo__precios .precio {
   font-size: 2rem;
   line-height: 1;
-}
-
-.combo .ahorro {
-  background: var(--menta-suave);
 }
 
 .nota {
@@ -1461,7 +1482,7 @@ select {
 
 .cantidad-control button:hover,
 .quitar:hover {
-  background: var(--menta-suave);
+  background: var(--amarillo-suave);
 }
 
 .cantidad-control button:disabled {
@@ -1623,12 +1644,12 @@ select:focus-visible {
 }
 
 .opcion:hover {
-  border-color: var(--verde);
+  border-color: var(--naranja);
 }
 
 .opcion:has(input:checked) {
   border-color: var(--verde-hondo);
-  background: var(--menta-suave);
+  background: var(--verde-suave);
 }
 
 .opcion input {
@@ -1706,8 +1727,8 @@ select:focus-visible {
   margin-bottom: var(--e-3);
   padding: 14px;
   border-radius: 50%;
-  background: var(--menta);
-  color: var(--verde-hondo);
+  background: var(--verde);
+  color: var(--verde-noche);
 }
 
 .confirmacion h2:focus {
@@ -1723,20 +1744,21 @@ select:focus-visible {
 .pie {
   margin-top: var(--e-8);
   padding-block: var(--e-6) var(--e-4);
-  background: var(--verde-hondo);
-  color: var(--crema);
+  background: var(--verde);
+  color: var(--verde-noche); /* el blanco y la crema no llegan al contraste mínimo sobre #00a676 */
 }
 
 .pie a {
-  color: var(--crema);
+  color: var(--verde-noche);
 }
 
 .pie a:hover {
-  color: var(--blanco);
+  color: var(--verde-noche);
+  text-decoration-color: var(--amarillo);
 }
 
 .pie :focus-visible {
-  outline-color: var(--crema);
+  outline-color: var(--verde-noche);
 }
 
 .pie__grilla {
@@ -1744,7 +1766,7 @@ select:focus-visible {
   gap: var(--e-5);
 }
 
-/* El logo es verde: en el pie va sobre un círculo crema para que se lea sobre el fondo oscuro */
+/* El logo es verde: en el pie va sobre un círculo crema para que se lea sobre el fondo verde */
 .pie__logo {
   display: inline-block;
   width: 136px;
@@ -1761,7 +1783,7 @@ select:focus-visible {
 }
 
 .pie p {
-  color: #cfe9df;
+  color: var(--verde-noche);
 }
 
 .pie h2 {
@@ -1791,13 +1813,13 @@ select:focus-visible {
 .pie li .icono {
   width: 20px;
   height: 20px;
-  color: var(--menta);
+  color: var(--amarillo);
 }
 
 .pie__legal {
   margin: var(--e-6) 0 0;
   padding-top: var(--e-4);
-  border-top: 1px solid rgba(250, 249, 239, 0.2);
+  border-top: 1px solid rgba(0, 46, 32, 0.25);
   font-size: 0.875rem;
   max-width: none;
 }
